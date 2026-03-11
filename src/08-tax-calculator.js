@@ -27,4 +27,22 @@
  */
 export function calculateTax(income) {
   // Your code here
+  //   *   Bracket 1: $0 – $10,000        → 0%  (tax-free!)
+  //  *   Bracket 2: $10,001 – $30,000   → 10% (only on the amount ABOVE $10,000)
+  //  *   Bracket 3: $30,001 – $70,000   → 20% (only on the amount ABOVE $30,000)
+  //  *   Bracket 4: Over $70,000        → 30% (only on the amount ABOVE $70,000)
+  if (income <= 10000) return 0
+
+  if (income <= 30000) {
+    let taxableIncome = income - 10000
+    return ((10 / 100) * taxableIncome)
+  }
+  else if (income > 30000 && income <= 70000) {
+    let taxableIncome = income - 30000
+    return 2000 + ((20 / 100) * taxableIncome)
+  }
+  else if (income > 70000) {
+    let taxableIncome = income - 70000
+    return 2000 + 8000+((30 / 100) * taxableIncome)
+  }
 }
