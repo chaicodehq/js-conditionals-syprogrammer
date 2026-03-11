@@ -42,9 +42,9 @@ export function calculateParkingFee(hours, vehicleType) {
   if (vehicleType == 'car') {
     totalBill = Math.min((5 + ((hours - 1) * 3)), 30)
   } else if (vehicleType == "motorcycle") {
-    totalBill = ((3 + ((hours - 1) * 2)), 18)
+    totalBill =  Math.min((3 + ((hours - 1) * 2)), 18)
   } else if (vehicleType == "bus") {
-    totalBill = ((10 + ((hours - 1) * 7)), 60)
+    totalBill = Math.min((10 + ((hours - 1) * 7)), 60)
   }
 
   return totalBill
